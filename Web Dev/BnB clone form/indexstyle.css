@@ -1,0 +1,31 @@
+header{
+    text-align: center;
+    background-color: #535657;
+    height: 50px;
+    color: #DEE7E7;
+}
+
+footer{
+    background-color: #535657;
+    height: 50px;
+    color: #DEE7E7;
+    text-align: center;
+}
+
+body{
+    background-color: antiquewhite;
+}
+
+.details{
+    background-color: #EEE2DF;
+}
+
+#logo{
+    display: inline;
+    float: left;
+}
+
+.head{
+    color: #535657;
+    text-decoration: underline;
+}
