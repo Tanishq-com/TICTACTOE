@@ -1,0 +1,434 @@
+body {
+    font-family: 'Libre Baskerville', serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #141414;
+    background-image:
+        radial-gradient(circle at 20% 30%, #38e93e22 0%, transparent 40%),
+        radial-gradient(circle at 50% 60%, #38e93e1a 0%, transparent 40%),
+        radial-gradient(circle at 80% 30%, #38e93e22 0%, transparent 40%);
+}
+
+
+.heading{
+    margin-top: 10px;
+    padding-bottom: 10px;
+    font-size: 100px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #eef0f2;
+    text-shadow: 0 2px #38e93e;
+
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    aspect-ratio: 1 / 1;
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #141414;
+}
+
+.card-front {
+    color: #eef0f2;
+}
+
+.card-back {
+    color: #eef0f2;
+    transform: rotateY(180deg);
+    padding: 25px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+}
+
+.flip-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: background-color 0.3s ease;
+}
+
+.flip-button:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.card-back .flip-btn {
+    color: white;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.card-back .flip-btn:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Add this to your existing style.css */
+/* Update these rules in your style.css */
+.card-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px; /* You can adjust the height as needed */
+
+}
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.domain-title {
+    font-family: "Playfair Display", serif;
+    /* Ensures font is applied */
+    font-size: 32px;
+    /* Explicit size */
+    text-align: center;
+    /* Ensures centering */
+    padding: 10px 10px;
+    /* Balanced padding */
+    margin: 0;
+    /* Removes default margins */
+    margin-top: 30px;
+    /* Pushes title to bottom */
+}
+.fliped-title {
+    text-align: center;
+    padding: 0;
+}
+.domain-description {
+    text-align: left;
+    line-height: 1.6;
+    font-size: 16px;
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.domain-description::-webkit-scrollbar {
+    width: 6px;
+}
+
+.domain-description::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.domain-description::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.card {
+  width: 300px;
+  perspective: 1000px;
+  margin: 15px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #111;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-front {
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+  overflow-y: auto;
+}
+
+.card-image-container {
+  position: relative;
+  height: 60%;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 15px 10px;
+  color: white;
+}
+
+/* Top-right button on both sides */
+.flip-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #141414;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 6px 10px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.flip-btn:hover {
+  background-color: rgba(41, 40, 40, 0.694);
+}
+
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .heading {
+    font-size: 2rem !important;
+    padding: 0 12px;
+    text-align: center;
+    word-break: break-word;
+  }
+
+  .cards-container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 16px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .card {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .card-inner,
+  .card-front,
+  .card-back {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .card-image-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .flip-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 50%;
+    padding: 6px;
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    color: white;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .domain-title, .fliped-title {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .domain-description {
+    padding: 10px;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+    .card {
+    height: auto !important;
+    overflow: visible;
+  }
+
+  .card-inner,
+  .card-front,
+  .card-back {
+    height: auto !important;
+  }
+
+  .card-image-container {
+    height: auto !important;
+  }
+
+  .card-image {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+    display: block;
+  }
+
+  .domain-description {
+    padding-bottom: 20px; /* extra room at bottom */
+  }
+}
+
+@media (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 500px;
+    perspective: 1000px;
+  }
+
+  .card-inner {
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    position: relative;
+    min-height: 100%;
+  }
+
+  .card.flip .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    top: 0;
+    left: 0;
+  }
+
+  .card-front {
+    z-index: 2;
+  }
+
+  .card-back {
+    transform: rotateY(180deg);
+    z-index: 1;
+  }
+
+  .card-image-container {
+    width: 100%;
+  }
+
+  .card-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .flip-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1rem;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 5;
+  }
+
+  .domain-title,
+  .fliped-title {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 10px 0;
+  }
+
+  .domain-description {
+    padding: 0 15px 15px;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
+
+
